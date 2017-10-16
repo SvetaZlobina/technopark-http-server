@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER Svetlana Zlobina <svetlanazlobina97@gmail.com>
 
-RUN apt-get update
-RUN apt-get install python
+RUN apt-get -y update
+RUN apt-get -y install python
 
 ENV WORK /opt
 ADD . $WORK/httpd
