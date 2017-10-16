@@ -4,10 +4,10 @@ MAINTAINER Svetlana Zlobina <svetlanazlobina97@gmail.com>
 RUN apt-get -y update
 RUN apt-get -y install python
 
-ENV WORK /opt
-ADD . $WORK/httpd
+ENV WORK /usr/local/bin
+ADD . $WORK/python2.7
 
-WORKDIR $WORK/httpd
+WORKDIR $WORK/python2.7
 
 RUN mkdir -p /var/www/html
 
