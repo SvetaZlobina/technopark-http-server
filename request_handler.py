@@ -1,4 +1,7 @@
-from urllib.parse import urlparse, unquote, parse_qs
+try:
+    from urllib.parse import urlparse
+except ImportError:
+     from urlparse import urlparse
 import os
 
 from response import Response
