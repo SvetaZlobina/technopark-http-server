@@ -1,7 +1,7 @@
 try:
-    from urllib.parse import urlparse
+    from urllib.parse import urlparse, unquote, parse_qs
 except ImportError:
-     from urlparse import urlparse
+     from urlparse import urlparse, unquote, parse_qs
 import os
 
 from response import Response
@@ -47,6 +47,7 @@ class RequestHandler:
 
     def __make_response(self):
         real_path = os.path.normpath(self.root_dir + '/' + self.path)
+        print(real_path)
         response = Response(ResponseCode.NOT_FOUND)
 
         if os.path.commonprefix([real_path, self.root_dir]) != self.root_dir:

@@ -3,13 +3,13 @@ import os
 import sys
 
 from server import Server
-from server_config import DOCUMENT_ROOT
+from server_config import DOCUMENT_ROOT, CPU_NUMBER
 
 
 def parse_args():
     parser = argparse.ArgumentParser(description='http server for static files')
     parser.add_argument('-r', '--root', type=str, help='root directory', default=DOCUMENT_ROOT)
-    parser.add_argument('-c', '--ncpu', type=int, help='numper of CPU', default=os.cpu_count())
+    parser.add_argument('-c', '--ncpu', type=int, help='numper of CPU', default=CPU_NUMBER)
     return parser.parse_args()
 
 

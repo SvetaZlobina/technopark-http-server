@@ -27,7 +27,7 @@ class Server:
         self.server_sock.bind((self.host, self.port))
         self.server_sock.listen(self.listeners)
 
-        for _ in range(self.workers_num - 1):
+        for _ in range(self.workers_num):
             pid = os.fork()
             if pid:
                 self.workers.append(pid)
